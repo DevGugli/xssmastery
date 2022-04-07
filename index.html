@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XSS Mastery</title>
+  </head>
+  <body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <div class="nav-side-menu">
+      <div class="brand"><a href="#"><img src="./xss-helmet-logo.png" alt=""></a> <br>
+        <h3 class="head">Security Training for Developers.</h3></div>
+      <i
+        class="fa fa-bars fa-2x toggle-btn"
+        data-toggle="collapse"
+        data-target="#menu-content"
+      ></i>
+      <div class="body">
+        <div class="menu-list">
+          <ul id="menu-content" class="menu-content collapse out">
+            <li>
+              <a href="#"> <i class="fa fa-dashboard fa-lg"></i> HOME </a>
+            </li>
+
+            <li
+              data-toggle="collapse"
+              data-target="#products"
+              class="collapsed active"
+            >
+              <a href="#"
+                ><i class="fa fa-gift fa-lg"></i> OWASP TOP 10
+                <span class="arrow"></span
+              ></a>
+            </li>
+            <ul class="sub-menu collapse" id="products">
+              <li ><a href="#bac">1. Broken Access Control </a></li>
+              <li ><a href="#cryptofail">2. Cryptographic Failures</a></li>
+              <li ><a href="#injection">3. Injection</a></li>
+              <li ><a href="#insecuredesign">4. Insecure Design</a></li>
+              <li ><a href="#securitymis">5. Security Misconfiguration</a></li>
+              <li ><a href="#vulnandoutdated">6. Vulnerable and Outdated Components</a></li>
+              <li>
+                <a href="#identification">7. Identification and Authentication</a>
+              </li>
+              <li><a href="#dataintegrity">8. Software and Data Integrity Failures</a></li>
+              <li>
+                <a href="#securitylogging">9. Security Logging and Monitoring </a>
+              </li>
+              <li><a href="#ssrf">10. Server-Side Request Forgery</a></li>
+            </ul>
+            <li>
+              <a href="./0l4bs-master/index.html"> <i class="fa fa-user fa-lg"></i> XSS Gameboi </a>
+            </li>
+
+            <li>
+              <a href="#"> <i class="fa fa-users fa-lg"></i> About </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="right" id="home">
+
+      <div class="container " style="max-width: 838px;" >
+        <div >
+          <div class="row title modest">
+          <h1 class="padding head heading">XSS MASTERY; <BR>MAKING ETHICAL HACKING ACCESSIBLE.</h1>
+            <h2 class="head"></h2>
+            <p class="well para mar">
+              Completely free and utterly comprehensive security training. Review
+              concrete code samples illustrating the security flaws, and how to
+              avoid them, in the major programming languages.<br />
+              Hack real, vulnerable web applications to learn how security exploits
+              work.<br />
+            </p>
+    
+            <div class="home-sub-n">
+              <div class="home-sub-left">
+                <div class="sub3"><h5 class="head">Implementation:<br>
+                </h5><p class="para well mar">Completely free and utterly comprehensive security training. Review concrete code samples illustrating the security flaws, and how to avoid them, in the major programming languages.</div>
+                <div class="sub3"><h5 class="head">Mitigation<br></h5><p class="para well mar">Covers every major security vulnerability you are likely to face. Learn how prevalent, exploitable and dangerous each vulnerability is.</p></div>
+                <div class="sub3"><h5 class="head">Quizes and Games<br></h5><p class="para mar well">Covers every major security vulnerability you are likely to face. Learn how prevalent, exploitable and dangerous each vulnerability is.</p></div>
+              </div>
+              <div class="home-sub-right">
+              </div>
+            </div>
+            <h4 class="head heading">Web Security for Developers</h4><p class="mar para well"> We will teach you how your websites are vulnerable to attack and how to protect them. Each chapter breaks down a major security vulnerability and explores a real-world attack, coupled with plenty of code to show you both the vulnerability and the fix. You’ll learn how to:
+</p>
+<div class="mar para well">
+                <p>-Protect against SQL injection attacks, malicious JavaScript, and cross-site request forgery
+                Add authentication and shape access control to protect accounts.<br>
+                - Lock down user accounts to prevent attacks that rely on guessing passwords, stealing sessions, or escalating privileges. <br>
+                - Implement encryption. <br>
+                - Manage vulnerabilities in legacy code
+                - Prevent information leaks that disclose vulnerabilities. <br>
+                - Mitigate advanced attacks like malvertising and denial-of-service</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+  
+        
+    
+    </div>
+    <section class="right" id="bac">
+      <div class="main reading sql-injection" style="background-color: white;">
+
+        <div class="container" style="max-width: 838px;" >
+          <div>
+            <div class="row title modest" style="color:white" "font-family: serif;" >
+              
+            </div>
+      <h3 class="head heading">1. BROKEN ACCESS CONTROL</h3> 
+  
+      <div class="head">OVERVIEW</div>
+        <div class="para well"><p>Moving up from the fifth position, 94% of applications were tested 
+          for some form of broken access control with the average incidence rate of 3.81%,
+           and has the most occurrences in the contributed dataset with over 318k.</p><p></div>
+
+
+        <div class="head">DESCRIPTION</div>    
+        <img  class="margin" src="./acl.png" alt=""> 
+        <div class="para well">
+      <P>Broken Access control enforces policy such that users cannot act outside of their 
+        intended permissions. Failures typically lead to unauthorized information disclosure, modification, 
+        or destruction of all data or performing a business function outside the user's limits. Common access control 
+        vulnerabilities include: </P>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+          Violation of the principle of least privilege or deny by default, where access should only
+           be granted for particular capabilities, roles, or users, but is available to anyone. 
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          Bypassing access control checks by modifying the URL 
+          (parameter tampering or force browsing), internal application state, 
+          or the HTML page, or by using an attack tool modifying API requests.  
+        </li>
+      </ul>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+          Permitting viewing or editing someone else's account, by providing
+           its unique identifier (insecure direct object references) 
+        </li>
+      </ul>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+          Accessing API with missing access controls for POST, PUT and DELETE.    
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          Elevation of privilege. Acting as a user without being logged in or acting
+           as an admin when logged in as a user.   
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          Metadata manipulation, such as replaying or tampering with a JSON Web Token
+           (JWT) access control token, or a cookie or hidden field manipulated to elevate 
+           privileges or abusing JWT invalidation.    
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          CORS misconfiguration allows API access from unauthorized/untrusted origins.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Force browsing to authenticated pages as an unauthenticated user or to privileged pages as a standard user. 
+        </li>
+      </ul>
+    </div>
+            <div class="head">RISKS:</div>
+            <div class="risks">
+              <img src="/prevalence.PNG" alt="">
+              <img src="explit.PNG" alt="">
+              <img src="impact.PNG" alt="">
+              <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+              <div class="exploitability">EXPLOITABILITY : EASY</div>
+              <div class="impact">IMPACT : DEVASTATING</div> -->
+            </div>
+      
+          
+      
+      <div class="head">IMPACTS OF BROKEN ACCESS CONTROL: </div>
+      
+      
+      <div class="para well">
+      <li>Whenever we make an account on a website, we are given a unique ID. By using that ID, we can access the database where all our sensitive contents are saved.
+      </li>
+          <p> For example: </p>
+      <p>Suppose, you have logged into a website, and your user ID is 986. The URL of your profile page should look something like this: https://brokenaccesscontrol.com/profile?id=986.
+         We have to keep in mind that, like you, everyone else who makes his/her account on that website, is given a unique user ID. So, if you replace your ID with someone else’s user ID, 
+         then you can get access to his/her profile. Yes, this can happen if access control is not properly implemented in the server. </p>
+      
+      
+      
+      <li>
+        Hackers can take advantage of access flaws to gain access to the resources and services that should not be accessible to normal users 
+      </li>   
+      
+      <p> For Example: </p>
+      <p>the admin page of a web application should only be accessible to the admin, and shouldn’t be available to any other user. However, if the access control is broken then hackers can 
+        easily get access to it just by making some changes in the URL. With that privilege, they can steal other users’ data or deploy malicious payloads to destroy the entire application hosting ecosystem. </p>
+      
+      
+      <li>
+         There are possibilities of Distributed Denial of Service attacks (DDOS). With access to those user accounts, attackers can attempt to disrupt the normal traffic of a targeted server, by deploying bots.
+         This makes it difficult for the server to distinguish legitimate user traffic from attack traffic.
+      </li>
+      
+      
+      
+      
+      
+    </div>
+      <div class="head">PROTECTION:</div>
+      <div class="para well"><p>There is no one-size-fits-all solution to correctly implement access control. Generally speaking, your access control strategy should cover three aspects:</p>
+      
+      <ul>
+        <li>Authentication - correctly identifying a user when they return to the application.</li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>Authorization - deciding what actions a user should and should not be able to perform once they have been authenticated.</li>
+      </ul>
+      
+      
+      <ul>
+        <li>Permission Checking - evaluating authorization at the point-in-time when a user attempts to perform an action.</li>
+      </ul>
+      
+      
+      
+      
+      </div>
+      <div class="head">PREVENTING BROKEN ACCESS CONTROL:</div>
+      <div class="para well">
+      
+      <ul>
+        <li>Continuous Inspection and Testing Access Control </li>
+      </ul>
+      
+      
+      <ul>
+        <li>Deny Access By Default</li>
+      </ul>
+      
+      
+      <ul>
+        <li>Limiting CORS Usage </li>
+      </ul>
+      
+      <ul>
+        <li>Enable Role-based Access Control </li>
+      </ul>
+      
+      <ul>
+        <li> Enable Permission-Based Access Control</li>
+      </ul>
+      
+      
+      <ul>
+        <li>Enable Mandatory access control</li>
+      </ul>
+      
+      
+    </div>
+      
+    </div>
+      
+      <div class="head">TOOLS TO PREVENT/DETECT/REMEDIATE BROKEN ACCESS CONTROL: </div>
+      
+      <div class="para well">
+
+     
+      <ul>
+        <li>
+          Crashtest Security Suite 
+        </li>
+      </ul>
+      
+      
+      <ul>
+        <li>
+          HDiv 
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          Immuniweb Discovery    
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          PortSwigger/Burp Suite 
+        </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>
+          Acunetix  
+        </li>
+      </ul>
+    </div>
+      
+          </div>
+
+        </div>
+      
+        <a  href="./Broken Access Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+    </section>
+
+
+
+
+<!-- cryptographic failures-->
+<div class="right" id="cryptofail">
+
+  <div class="container" style="max-width: 838px;" >
+    <div>
+      <div class="row title modest" style="color:gray" "font-family: serif;" >
+      </div>
+    <h3 class="head heading">2. CRYPTOGRAPHIC FAILURES</h3>
+<div class="head">OVERVIEW:</div>
+  </p>
+
+
+<div class="para well"> Cryptographic Failures </strong> known as Sensitive Data Exposure, which is more of a broad symptom rather 
+  than a root cause, the focus is on failures related to cryptography (or lack thereof).
+   Which often lead to exposure of sensitive data. Notable Common Weakness Enumerations 
+   (CWEs) included are CWE-259: Use of Hard-coded Password, CWE-327: Broken or Risky Crypto 
+   Algorithm, and CWE-331 Insufficient Entropy 
+  </div>
+  
+  <img  style="margin-left:20rem" class="margin" src="./cryptographics image.png" alt="">
+   <div class="head"> REASONS FOR CRYPTOGRAPHIC FAILURES </div>
+<div class="para well">
+<ul>
+  <li> Storing or transmitting sensitive data in clear text </li>
+</ul>
+
+<ul>
+  <li> Using outdated or weak cryptographic algorithms and protocols </li>
+</ul>
+
+
+<ul>
+  <li> Using default or weak crypto keys, not using key management and rotation </li>
+</ul>
+
+
+<ul>
+  <li> Not enforcing encryption </li>
+</ul>
+
+
+<ul>
+  <li> Not properly validating the server certificate and the trust chain  </li>
+</ul>
+
+
+<ul>
+  <li> Ignoring or reusing initialization vectors or using an insecure mode of operation </li>
+</ul>
+
+
+
+</div>
+
+      <div class="head">RISKS:</div>
+            <div class="risks">
+              <img src="/prevalence.PNG" alt="">
+              <img src="explit.PNG" alt="">
+              <img src="impact.PNG" alt="">
+              <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+              <div class="exploitability">EXPLOITABILITY : EASY</div>
+              <div class="impact">IMPACT : DEVASTATING</div> -->
+            </div>
+
+<div class="para well">
+
+<ul>
+  <li> Classify data (processed, stored, or transmitted) that is transmitted by the application and identify which data is sensitive according to privacy laws, regulations, and business needs </li>
+</ul>
+
+
+<ul>
+  <li> Implement security controls depending on data classification </li>
+</ul>
+
+<ul>
+  <li> Don’t store sensitive data, discard it as soon as possible, or use PCI DSS compliant tokenization or even truncation </li>
+</ul>
+
+<ul>
+  <li> Encrypt all data at rest that needs to be stored </li>
+</ul>
+
+<ul>
+  <li> Use strong algorithms, protocols, and keys </li>
+</ul>
+
+<ul>
+  <li> Use the Transport Layer Security (TLS) protocol with forward secrecy to encrypt all data in transit </li>
+</ul>
+
+<ul>
+  <li> Use HTTP Strict Transport Security (HSTS) directive encryption or similar </li>
+</ul>
+
+<ul>
+  <li> Never use FTP and SMTP protocols to transfer sensitive data </li>
+</ul>
+
+<ul>
+  <li> Disable caching for user responses that contain sensitive data </li>
+</ul>
+
+<ul>
+  <li> Use functions that always salt and hash passwords and have a work factor such as brcrypt, scrypt, Argon2, PBKDF2 to store passwords  </li>
+</ul>
+
+<ul>
+  <li> Carefully choose the initialization vectors, depending on the mode of operation – for many this may mean a cryptographically secure pseudo-random number generator (CSPRNG). </li>
+</ul>
+
+<ul>
+  <li> Always use authenticated encryption</li>
+</ul>
+
+<ul>
+  <li>Use cryptographic random key generation and store the keys as byte arrays</li>
+</ul>
+
+
+<ul>
+  <li> Use cryptographic randomness where needed but ensure it is not seeded predictably or with low entropy </li>
+</ul>
+
+</div>
+
+
+<div class="head">Example</div>
+<div class="para well">
+     <p>Passwords, credit card numbers, health records, personal information, and business secrets require extra protection </p> 
+    </div>
+  </div>
+  </div>
+  <a  href="./cryptographics Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+      </div>
+      </div>
+
+
+<!--INJECTION-->
+<div class="right" id="injection">
+
+  <div class="container" style="max-width: 838px;" >
+    <div>
+      <div class="row title modest">
+        <h3 class="head heading">3. INJECTION</h3>
+      </div>
+
+      
+ <div class="head">SQL INJECTION</div><p class="para well"> An injection attack refers to untrusted data by an application that forces 
+  it to execute commands. Such data or malicious code is inserted by an attacker and can compromise data or the
+   whole application. The most common injection attacks are SQL injections and cross-site scripting (XSS) attacks, 
+   but code injections, command injections, CCS injections, and others. </p>
+
+<p class="para well"><strong>If you only have time to protect yourself against one
+vulnerability, you should be checking for SQL injection vulnerabilities
+in your codebase!</strong></p>
+
+<p class="para well"> An application is vulnerable to an injection attack when one or several of the following conditions are present: </p>
+</p>
+<img style="height: auto;width:500px; margin-left:15rem" class="margin" src="./injection image.jpg" alt="">
+<div class="para well">
+<ul> 
+  <li>Data supplied by users is not validated, filtered, or sanitized 
+  </li> </ul>
+  
+
+  <p>
+  <ul>
+    <li>The interpreter directly uses dynamic queries or non-parameterized calls without context-aware escaping
+       </li></ul>
+  </p>
+  
+  <p>
+  <ul><li>Hostile data is used directly, concatenated, or used within object-relational mapping (ORM) search parameters to extract additional, sensitive records.</li> </ul> 
+ </p>
+
+ <ul> <li>When an injection attack is successful, the attacker can view, modify or even delete data and possibly gain control over the server.</li></ul>
+ </div></div> 
+
+      <div class="head">RISKS:</>
+      <div class="risks">
+        <img src="/prevalence.PNG" alt="">
+        <img src="explit.PNG" alt="">
+        <img src="impact.PNG" alt="">
+        <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+        <div class="exploitability">EXPLOITABILITY : EASY</div>
+        <div class="impact">IMPACT : DEVASTATING</div> -->
+      </div>
+      </div>
+      <p class="well para">What's the most exceedingly awful thing that could happen when you experience a SQL infusion assault?</p>
+
+<p class="para well">Our model hack told you the best way to sidestep the login page: 
+  an enormous security defect for a financial site. More perplexing assaults will permit an 
+  assailant to run inconsistent proclamations on the data set. Before, programmers have utilized
+   infusion assaults to:</p>
+<div class="para well">
+<ul>
+  <li>
+<strong>Extricate touchy data</strong>, similar to Social Security numbers, or Visa subtleties</li>
+  <li>
+<strong>Identify the verification subtleties of clients enrolled on a site</strong> so these logins can be utilized in assaults on different destinations.</li>
+  <li>
+<strong>Erase information or drop tables</strong>, undermining the data set, and making the site unusable.</li>
+  <li>
+    Infuse further noxious code to be executed when clients visit the site.</li>
+</ul>
+</div>
+<div class="well para">
+<p><strong>SQL infusion assaults are amazingly normal.</strong> Significant organizations like
+<a href="http://www.cbsnews.com/news/yahoo-reportedly-hacked-is-your-account-safe">Yahoo</a> and
+<a href="https://www.wired.com/2011/06/sony-lulzsec/">Sony</a>
+have had their applications compromised. In other cases, hacker groups targeted
+<a href="http://arstechnica.com/security/2015/02/more-than-1-million-wordpress-websites-imperiled-by-critical-plugin-bug">specific applications</a> or
+wrote scripts intended to 
+<a href="http://www.nytimes.com/2014/08/06/technology/russian-gang-said-to-amass-more-than-a-billion-stolen-internet-credentials.html">harvest authentication details</a>.
+Not even <a href="http://arstechnica.com/tech-policy/2011/02/anonymous-speaks-the-inside-story-of-the-hbgary-hack">security firms</a> 
+are immune!</p>
+</div>
+<h3 class="head">HOW TO PREVENT INJECTION?</h3>
+<img class="margin" style="height: auto; width: 490px; margin-bottom:2rem" src="./injection-prevention.png">
+<div class="para well">
+</p>
+    <ul><li>
+     <P>The main vulnerability to an injection attack is data not being kept separate from commands and queries. Here is what can be done to prevent an injection: 
+     </li> </ul>
+
+
+     <ul><li>
+      The most common solution is the use of a safe API that avoids the use of the interpreter altogether or uses parameterized queries or migrates to Object Relational Mapping Tools (ORMs). Note that parametrized stored procedures can still be vulnerable to an SQL injection if queries and data are concatenated or hostile data is executed with EXECUTE IMMEDIATE or exec() 
+     </li></ul>
+
+
+      <ul><li>
+      Use positive server-side input validation (whitelist) – this is a partial defense since many applications require the use of special characters 
+     </li></ul>
+
+
+      <ul><li>
+      For residual dynamic queries, special characters can be avoided via the specific escape syntax for that interpreter 
+     </li></ul>
+
+      <ul><li>
+      Use database controls within queries such as LIMIT to prevent mass exposure of data if an SQL injection is successful 
+     </li></ul>
+
+        <ul><li>
+      Run a  SQL Injection Test or XSS Test by an atomated vulnerability tool such as Crashtest Security Suite (now 14-day Free Trial in it’s full version), which will inform you about every weaknesses and attacks vectors discovered in your web app or API. </P>     
+      </li></ul>
+    </div></div>
+    <a  href="./Quiz/Injection/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+  </div>
+
+</div>
+</div>
+<!--INSECURE DESIGN-->
+
+      <div class="right" id="insecuredesign">
+
+        <div class="container" style="max-width: 838px;" >
+          <div>
+            <div class="row title modest" >
+              <h3 class="head heading
+              ">4. INSECURE DESIGN</h3>
+            </div>
+      
+            
+      <strong class="head">INSECURE DESIGN: </strong><p class="well para">This category of vulnerabilities is 
+        focused on the risks associated with flaws in design and architecture. As explained by OWASP,  these are different from the risks associated with deficiencies in implementation. A well-implemented insecure design is still vulnerable to attacks.</p>
+      
+      
+      <p class="well para">
+        <strong >Insecure design refers</strong>, in part, to the lack of security controls and business risk profiling in the development of software, and thereby the lack of proper determination of the degree of security design that is needed. 
+      </p>
+      
+      
+    
+      <h3 class="head">HOW TO PREVENT INSECURE DESIGN?</h3>
+      <div class="well para">  
+      <ul>
+        <li>Implement a secure development lifecycle with application security experts to assess the design security and privacy-related requirements</li>
+      </ul>
+      
+      
+      <ul>
+        <li>Introduce and use a secure design pattern library or paved road ready to use components </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>Apply threat modeling methods to critical authentication, access control, business logic, and key flows</li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>Make security language and controls a part of user stories </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>Enforce plausibility checks from frontend to backend at each tier of the system </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>Validate critical flows’ resistance to the threat model via unit and integration tests. Compile use and misuse cases for every tier of the application</li>
+      </ul>
+      
+      
+      
+      
+      
+      <ul>
+        <li>Separate tier layers and network layers on the system, based on the exposure and protection requirements </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>Separate tenants robustly by design throughout all tiers </li>
+      </ul>
+    </div>
+      
+      <div class="head">RISKS:</div>
+      <div class="risks">
+        <img src="/prevalence.PNG" alt="">
+        <img src="explit.PNG" alt="">
+        <img src="impact.PNG" alt="">
+        <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+        <div class="exploitability">EXPLOITABILITY : EASY</div>
+        <div class="impact">IMPACT : DEVASTATING</div> -->
+      </div>
+      
+           
+      
+      
+      
+      
+      
+      <h3 id="APPLICATIONS" class="head">APPLICATIONS:</h3>
+      <div class="para well">
+      <P>Applications that handle touchy information may likewise require an information characterization methodology. This will break your information into general categories,so you can focus on safeguarding the most delicate information. For example, you could arrange information things as one of:</P>
+       
+      <ul>
+        <li>
+          <strong>Public information</strong> information accessible to everybody, similar to organization websites
+        </li>
+      </ul>
+      
+      
+      <ul>
+        <li>
+          <strong>Private information</strong> information accessible to verified clients
+        </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>
+          <strong>Limited information</strong> delicate information that might be claimed by specific clients, similar to profile data
+        </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>
+          <strong>High gamble information</strong> access tokens, passwords and certifications for outsider APIs that must never be shared
+        </li>
+      </ul>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+      
+        <h3 class="head" id="GETTING THE IMPROVEMENT LIFECYCLE">GETTING THE IMPROVEMENT LIFECYCLE:</h3><hr>
+        <h4 class="head">Description</h4>
+      <div class="well para">
+        <p>Whenever you have displayed your dangers, now is the ideal time to transform that data into security prerequisites. An essential for meeting such prerequisites is carrying out a trained Software Development Life-Cycle (SDLC), so you can confirm the code you compose is really taking care of the right issues.
+      
+        </p>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+      <strong>Source control</strong> All code your group composes ought to ultimately enter source control, and unquestionably should be kept in a device like git prior to being delivered. This will permit you to dissect code changes for potential security imperfections, and survey code running in your creation climate.
+        </li>
+      </ul>
+      
+      
+      
+      <ul>
+        <li>
+          <strong>Fabricate Automation</strong> Computerize your construct interaction to stay away from any variations between the code you test against and the code you run underway. This for the most part implies utilizing a bundle administrator to oversee conditions and composing a form script that gathers code or produces resources.
+      
+        </li>
+      </ul>
+      
+      
+      <ul>
+        <li>
+          <strong>Unit Testing</strong> Your assemble interaction ought to likewise execute any unit tests you have. Composing unit tests is a decent method for checking security necessities have been met (for example "just confirmed clients can see the profile page"), and go about as a type of documentation as the code is changed.
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          <strong>Persistent Integration</strong> You should run your fabricate interaction and unit tests at whatever point code is driven into source control, so your advancement group gets prompt input when security necessities are disregarded by a bunch of code changes.
+      
+        </li>
+      </ul>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+          <strong>Code Reviews</strong> Each code change ought to be surveyed by somebody other than the creator of the code change prior to being conveyed. A commentator going about as a second pair of eyes can regularly detect conceivable security defects before they go live.
+      
+        </li>
+      </ul>
+      
+      
+      
+      
+      
+      <ul>
+        <li>
+         <strong> Press button Deployment</strong> Your interaction for conveying to test and afterward creation conditions ought to be just about as straightforward as could really be expected. Whatever requires human intercession opens the entryway for client mistake, meaning you code may not convey neatly or by any stretch of the imagination.
+      
+        </li>
+      </ul>
+      
+      
+      
+      
+      <ul>
+        <li>
+          <strong>Rollback Capability</strong> You ought to have an interaction for fixing discharges and rapidly conveying an earlier form of the code. This is fundamental assuming you at any point send code with a security weakness, since you really want to fix the error when it is found.
+        </li>
+      </ul>
+      
+      
+      
+          </div>
+      
+            
+      
+      
+      
+      
+      
+        </div>
+      
+          <h3 class="head" id="KEEPING UP WITH SECURITY">KEEPING UP WITH SECURITY:</h3>
+      <ul>
+      <P class="well para">No doubt, your application will keep on adding elements and change over the long haul
+         considering new necessities. Necessities ought to be reported - for instance, as issues in an issue
+          tracker - and code changes should reference the issues they are settling. While investigating code transforms,
+           you want to guarantee that the new form of the code actually meets all-encompassing security prerequisites.</ul>
+      
+      </P>
+      
+      
+      <ul>
+        <p class="well para">Give specific consideration to trust limits, where untrusted input enters the application. Any progressions
+           to how information is taken care of ought to be put under a magnifying glass. If regularly assists with pondering sources -
+            where information enters the framework - and matches up - places in the code where delicate tasks are performed. Following through the code from each source to each adjust will assist with featuring expected weaknesses. </p>
+      </ul>
+      
+      
+      
+      
+      
+      
+      
+          <h3 class="head" id="APPLYING SECURITY STANDARDS">APPLYING SECURITY STANDARDS: </h3><hr>
+          <h3 class="head">DESCRIPTION</h3>
+      <div class="well para">
+      <p>Secure plan involves theory, as well. There are a modest bunch of standards you ought to continuously try to apply while composing code, which help safeguard against security takes a chance with you numerous not as yet have even imagined. These are:</p>
+      
+      
+          <ul>
+            <li>
+              <strong>Guideline of least honor</strong> Each cycle, program and client ought to work with minimal measure of honor expected to accomplish their objectives. Applying this guideline will relieve the damage an aggressor can do assuming they effectively undermine your framework. 
+            </li>
+          </ul>
+          
+      
+      
+      
+          <ul>
+            <li>
+             <strong>Approval of info</strong> Approve any info coming from an untrusted source (like a HTTP demand) to guarantee it is the normal configuration, and reject it in any case.
+       
+            </li>
+          </ul>
+      
+      
+      
+      
+      
+          <ul>
+            <li>
+              <strong>Isolation of occupants</strong> Various conditions (creation and test) should be on independent organizations and not share assets or setup.
+      
+            </li>
+          </ul>
+      
+      
+      
+      
+      
+          <ul>
+            <li>
+              <strong>Encryption</strong> Scrambling information very still and on the way will safeguard against man-in-the-center assaults and keep delicate data from being perused assuming that it is taken. 
+            </li>
+          </ul>
+      
+      
+      
+      
+      
+          <ul>
+            <li>
+             <strong> Bomb safely</strong> Expect disappointment conditions, and guarantee you don't release inward design subtleties in blunder messages. On the off chance that unforeseen blunder conditions emerge, guarantee you can move back any information base exchanges to guarantee information in not left in a defiled state.   
+            </li>
+          </ul>
+      
+      
+      
+      
+      
+          <ul>
+            <li>
+              <strong>Perceptibility</strong> Your running code should give logging proclamations and logs ought to be visible at runtime. Your group ought to have the option to notice the sort and volume of traffic hitting your servers and the amount of your accessible data transfer capacity is being utilized.   
+            </li>
+          </ul>
+      
+        </div>
+        </div>
+      
+
+        <a  href="./Quiz/Insecure Design/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+  </div>
+
+  <!--SECURITY MISCONFIGURATION-->
+  <div class="right" id="securitymis">
+
+    <div class="container" style="max-width: 838px;" >
+      <div>
+        <div class="row title modest">
+         <h3 class="head heading"> 5. SECURITY MISCONFIGURATION</h3>
+        </div>
+  
+  <h3 class="head">OVERVIEW:</h3>
+    </p>
+  
+  <div class="well para"><strong> Security Misconfiguration </strong>Security misconfiguration refers to security controls 
+    that are not secured or not configured correctly. This vulnerability is frequently due to one of the following reasons:  
+  
+  
+  <ul>
+    <li> Lacking security hardening in any part of an application </li>
+  </ul>
+  
+   
+  <ul>
+    <li> Wrongly configured permissions on cloud services  </li>
+  </ul>
+  
+  <ul>
+    <li> Unnecessary features, such as ports, services, pages, accounts, or privileges are allowed or installed </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Default accounts/passwords are enabled or unchanged  </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Error messages displayed to users contain stack traces or other sensitive information</li>
+  </ul>
+  
+  
+  <ul>
+    <li> The latest security features are not enabled or implemented correctly  </li>
+  </ul>
+  
+  
+  <ul>
+    <li> The server, framework, libraries, or databases’ security settings are not set to secure values </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Security headers or directives are not sent by the server or are not set to secure values </li>
+  </ul>
+  
+  
+  <ul>
+    <li> The software is not up to date </li>
+  </ul>
+ 
+  
+  <p> An automated pentest tool such as Crashtest Security can detect application vulnerabilities that may
+     open the door to an attack due to security misconfigurations. Sign up for a free trial and start your first vulnerability scan in minutes.</p>
+    </div>  
+     <h3 class="head" id="HOW TO PREVENT SECURITY MISCONFIGURATION ATTACKS ?"> HOW TO PREVENT SECURITY MISCONFIGURATION ATTACKS ?</h3><hr>
+  
+        <div class="head">RISKS:</div>
+            <div class="risks">
+              <img src="/prevalence.PNG" alt="">
+              <img src="explit.PNG" alt="">
+              <img src="impact.PNG" alt="">
+              <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+              <div class="exploitability">EXPLOITABILITY : EASY</div>
+              <div class="impact">IMPACT : DEVASTATING</div> -->
+            </div>
+  
+     
+  
+  <div class="well para">
+  <P>OWASP recommends the implementation of secure installation processes. Along with that, you should:</P>
+  
+  
+  <ul>
+    <li> Securing the system via a hardening process by developing and automating the process of deploying a 
+      separate and secure environment. Each separate environment (development, QA, production) must be configured identically but be accessible via different credentials  </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Use a “minimal platform” that has no unnecessary features, components, documentation, or samples. Do not install or remove unnecessary features and frameworks </li>
+  </ul>
+  
+  <ul>
+    <li> Review the cloud storage permissions</li>
+  </ul>
+  
+  <ul>
+    <li> Introduce a review and update of the configurations of all security notes, updates, and patches as part of the patch management process </li>
+  </ul>
+  
+  <ul>
+    <li> Implement segmented application architecture via segmentation, containerization, or cloud security groups to separate tenants and components  </li>
+  </ul>
+  
+  <ul>
+    <li> Security directives, such as security headers, should be sent to clients</li>
+  </ul>
+  
+  <ul>
+    <li> Automate the verification of the effectiveness of configurations and settings in each environment </li>
+  </ul>
+</div></div></div>
+<a  href="./Quiz/Security Misconfiguration Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>  
+      
+  
+  </div>
+
+  <!--vulnerable and outdated components-->
+  <div class="right" id="vulnandoutdated">
+
+    <div class="container" style="max-width: 838px;" >
+      <div>
+        <div class="row title modest" >
+         <h3 class="head heading"> 6. VULNERABILITY AND OUTDATED COMPONENTS</h3>
+        </div>
+  
+<h3 class="head">INTRODUCTION:</h3>        
+    </p>
+  
+  
+  <p class="well">A software component is part of a system or application that extends
+     the functionality of the application, such as a module, software package, 
+     or API. Component-based vulnerabilities occur when a software component is
+      unsupported, out of date, or vulnerable to a known exploit. You may inadvertently 
+      use vulnerable software components in production environments, posing a threat to the web application. </p>
+  
+  
+  
+  
+  
+  
+  
+  
+  <p>
+    <h3 class="head">MITIGATION:</h3>   
+  </p>
+  <div class="well para">
+  <P>Some of the measures you can take to get rid of such issues are: </P>
+  
+  <ul>
+    <li> Maintain an inventory of components you are using and ensure that they are kept up-to-date.</li>
+  </ul>
+  
+  
+  <ul>
+    <li> Remove unused dependencies and components to reduce the attack surface and your liabilities (yes,
+       code is indeed a great liability!) </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Install the components via trusted channels and make sure to validate their integrity. Also, 
+      it’s better to use signed packages (if available). </li>
+  </ul>
+  
+  
+  <ul>
+    <li> Be on the lookout for any security patches for the components you are relying on. 
+      If the packages you use are not maintained, then either make sure you apply patches yourself 
+      or use some alternate component that is well maintained and has a big user-base and supporting community.
+       If possible, then this should actually be done right from the start — choose your dependencies and components wisely! </li>
+  </ul>
+  
+  
+  
+  
+</div>
+  <div class="head">RISKS:</div>
+  <div class="risks">
+    <img src="/prevalence.PNG" alt="">
+    <img src="explit.PNG" alt="">
+    <img src="impact.PNG" alt="">
+    <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+    <div class="exploitability">EXPLOITABILITY : EASY</div>
+    <div class="impact">IMPACT : DEVASTATING</div> -->
+  </div>
+  
+       
+  <div class="well para">
+  <p>Exploiting known issues can be very impactful, they are often the first thing that attackers 
+    look at and abuse to gain a foothold or to elevate their privileges. This issue might be a minor 
+    one just as well, depending on what software is impacted.</p>
+  
+  
+  
+  <p><strong>EXAMPLE</strong></p>
+  
+  <li><strong> Heartbleed code </strong></li>
+  <p>The coding mistake that caused Heartbleed can be traced to a single line of code:
+    memcpy(bp, pl, payload);</p>
+  <p>memcpy() is the command that copies data. bp is the place it's copying it to, pl 
+    is where it's being copied from, and payload is the length of the data being copied.
+     The problem is that there's never any attempt to check if the amount of data in pl is 
+     equal to the value given of payload. </p>
+  
+  
+  
+  
+  
+  <li><strong>The Heartbleed fix </strong></li>
+  <p>The way to fix the Heartbleed vulnerability is to upgrade to the latest version of OpenSSL</p>
+</div>
+  <p class="head">Code Example
+  <div class="well">
+    <P> * Read type and payload length first */ </P>
+  
+     <p> if (1 + 2 + 16 > s->s3->relent) </p>
+      
+      <p> return 0;</p> 
+      
+      <p> /* silently discard */</p> 
+      
+      <p> hbtype = *p++;</p> 
+      
+      <p> n2s(p, payload); </p>
+      
+      <p> if (1 + 2 + payload + 16 > s->s3->rrec.length) </p>
+      
+      <p> return 0;</p> 
+      
+      <p> /* silently discard per RFC 6520 sec. 4 */ </p>
+      
+      <p> pl = p; </P></p></p>
+  </Ul>
+</div>
+  
+  <div class="well pass">The first part of this code makes sure that the heartbeat 
+    request isn't 0 KB, which can cause problems. The second part
+     makes sure the request is actually as long as it says it is.</p>
+
+     <p>This includes components you directly use as well as nested
+        dependencies. If the software is vulnerable, unsupported, or out of 
+        date. This includes the OS, web/application server, database management system 
+        (DBMS), applications, APIs and all components, runtime environments, and libraries.</p>
+        </div>
+      </div>
+
+    </div>
+    <a  href="./Quiz/Vulnerable Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+
+  </div>
+  <div class="content">
+
+
+    <!--IDENTIFICATION AND AUTHENTICATION FAILURES-->
+<div class="right" id="identification">
+
+<div class="container" style="max-width: 838px;" >
+  <div>
+    <div class="row title modest" >
+      <h3 class="head heading">7. IDENTIFICATION AND AUTHENTICATION FAILURES
+        
+      </h3>
+    </div>
+
+    
+<p class="head"><strong></p>Identification & Authentication Failures</strong> This class of vulnerability covers any weaknesses in the authentication/session management 
+methodology. These are often poorly implemented in web apps, giving attackers access to account(s) and/or data that they otherwise shouldn’t be 
+authorized to view.  
+
+<h3 class="head">PRIVILEGE ESCALATION</h3>
+
+<P  class="well para">Privilege escalation attacks progressively increase their access to computer systems by exploiting
+ its security vulnerabilities. They are classified into horizontal and vertical privilege escalation attacks
+  based on the attack's strategy and objective. Privilege escalation attacks may also have general targets like 
+  an entire system or networks, but the attack can also be more focused such as a particular user or application. 
+  A variety of specific privilege escalation attacks exist, each of which exploits a different set of vulnerabilities
+   and has its own set of technical requirements. The methods of preventing these privilege escalation attacks include
+    both general and specific practices. </P>
+
+
+<h3 class="head">TYPES OF PRIVILEGE ESCALATION ATTACKS:</h3><hr>
+
+<div class="head">Horizontal Privilege Escalation</div>
+<p class="well para">Horizontal privilege escalation involves the attacker gaining access to a user account and increasing the permissions 
+on that account. This type of privilege escalation is typically more challenging, as it generally requires a greater 
+understanding of the system's vulnerabilities and the greater use of hacking tools like Metasploit. Attackers often use
+ phishing campaigns to perform the first step of gaining access to an account. </p>
+
+
+
+
+<div class="head">Vertical Privilege Escalation</div>
+<p class="well para">Vertical privilege escalation occurs when attackers gain direct access to an account that already has the privileges
+ needed to accomplish their goal. This type of privilege escalation is easier to perform since it doesn't require any 
+ steps beyond this. In this case, the attack focuses on identifying an account with the necessary privileges and obtaining 
+ access to that account. </p>
+
+
+
+
+
+ <div class="head">RISKS:</div>
+ <div class="risks">
+   <img src="/prevalence.PNG" alt="">
+   <img src="explit.PNG" alt="">
+   <img src="impact.PNG" alt="">
+   <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+   <div class="exploitability">EXPLOITABILITY : EASY</div>
+   <div class="impact">IMPACT : DEVASTATING</div> -->
+ </div>
+<div class="para well">
+    <p><strong>What's the most exceedingly awful thing that could happen when you experience a SQL infusion assault?</strong></p>
+
+<p>Many websites hold sensitive data on behalf of their users. If an attacker can exploit horizontal escalation vulnerabilities
+ to gain access to another user’s data, you are betraying your users’ trust, which can have reputational, legal, and financial 
+ implications.</p>
+
+<ul>
+<li>
+<strong>1. Password policies </strong>,It is essential to ensure users select unique, secure passwords and force them to change
+passwords periodically. Because this is difficult to enforce in practice, a good way to circumvent the insecure nature of passwords 
+is to apply two-factor authentication, especially for sensitive systems and administrative accounts. </li>
+<li>
+
+
+
+<strong>2. Specialized users and groups with minimum privileges </strong>Review your user base and redefine user accounts and groups to
+ensure they have clear roles, applying the minimum necessary privileges and file access to each role. By doing this, you ensure that even
+if an account is compromised, the potential for privilege escalation is severely limited. This applies to all accounts — even admins and
+ super-users should have limited access to the systems they are actually supposed to access or manage. No administrator should have broad
+  permissions for most or all network systems. 
+
+
+
+Most importantly — remove user accounts when they are no longer needed, and have a clear, mandatory procedure for dealing with employee departure. 
+
+</li>
+
+
+
+<li>
+
+<strong>3. Close unused ports and limit file access </strong>, Network ports should be blocked by default and only allowed if they are really needed
+for legitimate applications. Identify default configurations that have unnecessary services running, and block them. In the same way, files should be 
+read-only, with write access only enabled for users and groups who actually need them. </li>
+
+
+
+<li>
+
+<strong>4. Secure databases and sanitize user inputs  </strong>,Many database systems have insecure defaults, so special care must be taken to
+ensure databases are secured and protected by strong authentication. Data at rest should be encrypted whenever possible. Sanitize all user inputs 
+and patch databases to prevent SQL and other code injection attacks. </li>
+</li>
+
+
+
+
+
+
+<li>
+<strong>5. Keep your systems and applications patched and updated </strong>, Many privilege escalation attacks leverage software vulnerabilities 
+to gain initial access. Use vulnerability scanners to identify known vulnerabilities in your applications, and rigorously apply security patches to
+remediate them. Because it is not always possible or practical to patch or update systems, especially large-scale production systems or legacy components, 
+you may need to apply additional layers of security. For example, a web application firewall (WAF) can identify and block malicious communication related to
+ a vulnerability exploit at the network level, even if the underlying system was not patched.  </li>
+</li>
+
+
+
+
+<li>
+<strong>6. Change default credentials on all devices  </strong>, Be sure to remove or rename default and unused user accounts. Change the default
+login credentials for any hardware system, including printers, routers, and IoT devices. A single device with default credentials and an open network 
+port can become an initial access point for an attacker, leading to a privilege escalation attack. </li>
+</li>
+
+</ul>
+
+</div>
+
+<h3  class="head" id="User Enumeration">User Enumeration</h3><HR>
+<h4 class="head">DESCRIPTION</h4>
+
+
+
+<p  class="well">An attacker can exploit this behavior by using lengthy lists of common usernames, known names, and dictionary words to observe the application response 
+to all. With those results, the attacker can then infer which usernames are valid. An attacker can exploit this behavior by using lengthy lists of common
+ usernames, known names, and dictionary words to observe the application response to all. With those results, the attacker can then infer which usernames are valid. </p>
+<div class="para well">
+<ul>
+<li>
+
+  <strong> BRUTE FORCING PASSWORDS  </strong>, Once an attacker has a list of valid usernames, they can then easily target those users for common passwords. On a large platform,
+   how many users have a password of Password@123?  </li>
+</ul>
+
+<ul>
+  <li>
+
+    <strong> CREDENTIAL STUFFING </strong>, An attacker can use the usernames identified to search existing compromised databases for passwords. Chances are your 
+    users have identical usernames on other platforms, and may have used identical passwords as well.  </li>
+</ul>
+
+
+
+
+<ul>
+    <li>
+
+      <strong> SOCIAL ENGINEERING </strong>, After learning usernames, an attacker can likely identify the names of those users and attempt to contact them 
+      directly with social engineering campaigns  </li>
+
+</ul>
+
+
+
+<ul>
+      <li>
+
+        <strong>Mitigation </strong>, “Don’t inform users the account is invalid” is the common recommendation</li>
+
+</ul>
+
+
+
+        <ul>
+        <li>
+
+          <strong>Rate Limitting </strong>, We recommend using rate limiting only when all other measures are truly deemed infeasible due to business requirements or technical limitations. 
+
+
+
+          Be aware that rate limits can be bypassed by using a large network of IPs which are widely and easily available to most seasoned attackers. They can also be bypassed with
+           “low and slow” attacks, where requests are sent over a long period of time.  </li>
+</ul>
+
+
+
+  </div>
+
+</div>
+
+
+
+  <h3 class="head" id="Session Fixation">Session Fixation</h3><hr>
+  <h3 class="head">Description</h3>
+
+
+<p  class="well">Session Fixation is an attack technique that forces a user's session ID 
+to an explicit value. Depending on the functionality of the target web site, a number of techniques can
+ be utilized to "fix" the session ID value. These techniques range from Cross-site Scripting exploits to peppering
+  the web site with previously made HTTP requests. After a user's session ID has been fixed, the attacker will wait for 
+  that user to login. Once the user does so, the attacker uses the predefined session ID value to assume the same online identity. </p>
+
+
+  <h3 class="head">RISK:</h3>
+<p class="para well" >session fixation attacks attempt to exploit the vulnerability of a system that allows one person to fixate (find or set) another person's 
+session identifier. Most session fixation attacks are web based, and most rely on session identifiers being accepted from URLs (query string)
+ or POST data.</p>
+
+ <h3 class="head">MITIGATION</h3>
+ <div class="para well">
+<p>The only causes of session fixation are insufficient web application security and bad coding practices associated with session management: </p>
+
+
+<ul>
+<li>
+
+  In the worst case, developers don’t check the validity of session identifiers and any string (or any string of a specific format) 
+  may be provided as a session ID. This makes session fixation attacks trivial.
+</li>
+</ul>
+
+
+
+<ul>
+<li>
+
+  Very often, developers assign the session ID before the user 
+  is logged in and never change it. This is the main cause of typical session fixation attacks. 
+</li>
+</ul>
+
+
+
+
+
+<ul>
+<li>
+  If developers accept session IDs from GET or POST requests, they make it easier
+   for the attacker to forcefully set a session ID for the user. 
+  
+</li>
+</ul>
+
+
+<p>There are several ways to avoid session fixation vulnerabilities: </p>
+
+<ul>
+<li>
+  The standard method is to change the session ID right after the user logs in. 
+  This eliminates most session fixation vulnerabilities.  
+</li>
+</ul>
+
+
+
+
+<ul>
+<li>
+  An additional countermeasure is to change the session ID with the slightest suspicion of potential wrongdoing. 
+  For example, the web application may test whether the IP address or the user-agent of the client changed and if it did – provide a new session ID.  
+</li>
+</ul>
+
+
+
+
+
+
+<ul>
+<li>
+  You should also invalidate session IDs after a timeout. For example, 10 minutes of no activity should cause an automatic logout. This gives the attacker a 
+  small window of opportunity to use the fixed session ID  
+</li>
+</ul>
+
+
+
+
+
+<ul>
+<li>
+  Some sources recommend changing the session IDs with every user action. However, this is a drastic, unnecessary, 
+  and potentially harmful – it may impact user experience and performance (for example, it might be impossible when using applets). To minimize the impact, you may change 
+  the session ID before every important user action on the website.    
+</li>
+</ul>
+
+
+
+
+
+
+<ul>
+<li>
+  Remember to use session cookies for session management 
+  and do not accept session IDs from HTTP requests and HTTP headers. 
+</li>
+</ul>
+
+
+
+
+</div>
+
+<h3  class="head" id="Week Session ID">WEAK SESSION IDs </h3>
+  <h3 class="head">DESCRIPTION:</h3>
+
+<p  class="well">A web session is a set of HTTP transactions issued by a user within a given time frame. Web applications use sessions to retain information about each user,
+ keep track of their activity or define proper access rights and permissions. Each session has an identifier (token or ID) defined by the application 
+ to bind users to their HTTP traffic, being temporarily equivalent to the strongest authentication method used by the application for authenticated sessions. </p>
+
+
+ <h3 class="head">RISK:</h3>
+<div class="para well">
+ <ul>
+<li>
+Man-in-the-middle/man-in-the-browser attacks: Intercepting the communication  between two connections or systems.
+</li>
+ </ul>
+
+
+
+
+
+ <ul>
+  <li>
+    Session sniffing: Finding non-encrypted communications to find the session ID
+  </li>
+     </ul>
+
+
+
+
+
+     <ul>
+      <li>
+      
+        Cross-site script attack: Using malicious code to steal the session ID. 
+      </li>
+         </ul>
+
+        </div>
+
+         <h3 class="head">MITIGATION:</h3>
+<div class="para well">
+         <ul>
+          <li>
+            HTTPS: The use of HTTPS ensures that 
+            there is SSL/TLS encryption throughout the session traffic. Attackers will
+             be unable to intercept the plaintext session ID, even if the victim’s traffic
+              was monitored. It is advised to use HSTS (HTTP Strict Transport Security) to guarantee complete encryption.
+          </li>
+             </ul>
+
+
+
+             <ul>
+              <li>
+              
+                HTTPOnly: Setting up an HTTPOnly attribute prevents
+                 access to the stored cookies from the client-side scripts.
+                  This can prevent attackers from deploying XSS attacks that rely on injecting Java Scripts in the browser
+              </li>
+                 </ul>
+                </div>
+                 
+</div>
+<a  href="./Quiz/Identification Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+</div>
+</div>
+
+
+<!--software and data integrity failures-->
+<div class="right" id="dataintegrity">
+
+  <div class="container" style="max-width: 838px;" >
+    <div>
+      <div class="row title modest" >
+        <h3 class="head heading">8. SOFTWARE AND DATA INTEGRITY FAILURES</h3>
+      </div>
+
+      
+<h3 class="head">DESCRIPTION</h3>
+
+<p class="well para"> Software and data integrity failures relate to code and infrastructure that does not protect against integrity violations.
+   An example of this is where an application relies upon plugins, libraries, or modules from untrusted sources, repositories, and content
+    delivery networks (CDNs). An insecure CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system compromise.
+     Lastly, many applications now include auto-update functionality, where updates are downloaded without sufficient integrity verification and applied
+      to the previously trusted application. Attackers could potentially upload their own updates to be distributed and run on all installations.
+       Another example is where objects or data are encoded or serialized into a structure that an attacker can see and modify is vulnerable to 
+       insecure deserialization. </p>
+
+
+
+
+
+       <div class="head">RISKS:</div>
+       <div class="risks">
+         <img src="/prevalence.PNG" alt="">
+         <img src="explit.PNG" alt="">
+         <img src="impact.PNG" alt="">
+         <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+         <div class="exploitability">EXPLOITABILITY : EASY</div>
+         <div class="impact">IMPACT : DEVASTATING</div> -->
+       </div>
+
+   
+
+<h3 class="head"> MITIGATION </h3>
+<div class="para well">
+<ul>
+  <li> Always sign your application components to make sure that both software and data that come from the trusted source and have not been altered </li>
+</ul>
+
+
+<ul>
+  <li> Make sure that dependencies and third-party libraries use only trusted repositories. </li>
+</ul>
+
+
+<ul>
+  <li> Review the source code of your application to avoid unwanted configuration changes or introduction on malicious code into the software.</li>
+</ul>
+
+
+<ul>
+  <li> Make sure that no serialized data is sent unencrypted or unsigned to the clients to avoid data tampering or replay attacks. </li>
+</ul>
+    </div></div></div>
+    <a  href="./software and data Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+
+
+
+</div>
+<!--security and logging monitoring failures-->
+<div class="right" id="securitylogging">
+  <div class="container" style="max-width: 838px;" >
+      <div class="row title modest" >
+        <h3 class="head heading">SECURITY LOGGING AND MONITORING FAILURES</h3> 
+      </div>
+
+      
+
+
+      <h3 class="head">INTRODUCTION</h3>
+    <p class="well para">Insufficient logging and monitoring is, missing security critical information logs 
+   or lack of proper log format, context, storage, security and timely response to detect an incident or breach. <br><br>Security event logging and monitoring is a process that organizations perform by examining electronic audit logs for 
+  indications that unauthorized security-related activities have been attempted or performed on a system or application that processes, 
+  transmits or stores confidential information</p>
+
+
+
+
+
+  <h3 class="head">Why are Logging and monitoring considered to be important? </h3>
+<div class="para well">
+<p>When a malicious insider with authentic reasons for querying databases, accessing applications, modifying system configurations, and obfuscate records, organizations are left
+   powerless to detect what happened. Hence, details of logging of user access are essential for securing and preventing data breach/theft. </p>
+</ul>
+
+
+   <ul>
+    <li>Log monitoring is considered important for several reasons. One of the reasons includes Log monitoring can prevent downtime on your sites and servers. Log management tools analyze
+     logs and find problems within them, allowing your site reliability engineers to spend more time-solving problems and less time searching for them or responding in emergencies. Log 
+     monitoring can save your company valuable time and money.</li>
+   </ul>
+
+
+
+
+  </div>
+  <ul>
+   <div class="head">RISKS:</div>
+   <div class="risks">
+     <img src="/prevalence.PNG" alt="">
+     <img src="explit.PNG" alt="">
+     <img src="impact.PNG" alt="">
+     <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+     <div class="exploitability">EXPLOITABILITY : EASY</div>
+     <div class="impact">IMPACT : DEVASTATING</div> -->
+   </div>
+
+
+
+
+
+
+<h3 class="head">Log monitoring can be split up into three parts:</h3>
+<div class="para well">
+<ul>
+  <li>Log collection:  this includes log enrichment like parsing of logs, converting of logs, filtering of logs, etc. </li>
+</ul>
+
+<ul>
+  <li>
+    Log management: keeping data retention policies, keeping shards/indexes for better performance, implementing access control as logs contain sensitive information, etc.   
+  </li>
+</ul>
+
+
+
+<ul>
+  <li>Log monitoring/analysis: visualization, alerting, reporting. </li>
+</ul>
+
+
+
+
+
+</div>
+<h3 class="head">Example Attack Scenarios </h3>
+<p class="para well">
+  <strong>Scenario #1:</strong> A children's health plan provider's website operator couldn't detect a breach due to a lack of
+   monitoring and logging. An external party informed the health plan provider that an attacker had accessed and 
+   modified thousands of sensitive health records of more than 3.5 million children. A post-incident review found 
+   that the website developers had not addressed significant vulnerabilities. As there was no logging or monitoring of the system,
+    the data breach could have been in progress since 2013, a period of more than seven years. 
+</p>
+<p class="para well"><strong>Scenario #2:</strong> A major Indian airline had a data breach involving more than ten years' worth of personal data of millions
+   of passengers, including passport and credit card data. The data breach occurred at a third-party cloud hosting provider, who notified the
+    airline of the breach after some time. </p>
+
+    <p class="para well"><strong>Scenario #3:</strong> A major European airline suffered a GDPR reportable breach. The breach was reportedly caused by payment 
+  application security vulnerabilities exploited by attackers, who harvested more than 400,000 customer payment records. The airline was fined
+   20 million pounds as a result by the privacy regulator.</p>
+
+
+
+
+<h3 class="head">Remediation</h3>
+<div class="para well">
+<ul>
+  <li>Make sure the logs are backed up and synced to another server. 
+    The attacker should not be able to clear all the logs after hacking 
+    the server and by doing so preventing any forensics. Integrity of the log
+     collection system is the core of any forensic investigation. </li>
+</ul>
+
+
+<ul>
+  <li>Go over the system and make sure sensitive actions are logged. 
+    This would include logins, high-value transactions, password changes,
+     and so on. This is valuable when investigating a hack afterward. </li>
+</ul>
+
+
+
+<ul>
+  <li>Make it a routine to look at the most important logs and automate the process
+     for the rest. There should be a system in place that alerts you if a specific warning 
+     has been triggered or if a certain warning threshold has reached to accordingly take necessary measures. </li>
+</ul>
+
+
+</div>
+
+
+<h3 class="head" ">Key Elements in Log Statements </h3>
+<div class="para well">
+<ul>
+  <li>
+    The URL, HTTP status code and incoming IP address if the code is handling an incoming HTTP request.
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    The server name if more than one server is writing to the log file.
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Timing information if the code is executing a time-sensitive action.  
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Diagnostic information - for instance, if any action had to re-tried, or if a component is responding slowly.  
+  </li>
+</ul>
+
+
+
+
+</div>
+
+<h3 class="head" ">Conclusion </h3>
+<p class="para well"><strong>Insufficient logging is the most common reason why companies fail to deal with a security </strong> effectively. Organizations must be equipped by logging the entire activity or it could be difficult for the organization to find the criminal. Not being able to detect at an early stage may further lead to the occurrence of continuous breaches and significant losses. To stay well informed and compliant, taking appropriate measures and having in place loggings and monitoring is essential. 
+
+</p>
+
+    </div>
+
+    <a  href="./Quiz/Security logging Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+</div>
+<!--SSRF-->
+<div class="right" id="ssrf">
+
+  <div class="container" style="max-width: 838px;" >
+    <div>
+      <div class="row title modest" >
+        <h3 class="head heading">10. Server-Side Request Forgery Attacks</h3>
+      </div>
+
+      
+
+
+      <h3 class="head">INTRODUCTION</h3><hr>
+
+<p class="head"> Server-Side Request Forgery 
+  </p>
+  <div class="well para">
+<P>SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL.
+   It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected 
+   by a firewall, VPN, or another type of network access control list (ACL). 
+
+  If attackers can control the destination of server-side requests, this opens up a whole array of offensive activities, 
+  potentially allowing them to: </P>
+
+
+<ul>
+  <li>
+    Abuse the trust relationship between the vulnerable server and other systems 
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Bypass IP whitelisting  
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Bypass host-based authentication services  
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Read web resources and other useful assets that are not accessible 
+    to the public, for instance metadata APIs in AWS environments or trace.axd in ASP.NET
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Perform port scans on the internal network that the server is connected to  
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    Read files from the web server   
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    View status pages and interact with APIs as the web server  
+  </li>
+</ul>
+
+
+
+<ul>
+  <li>
+    Retrieve sensitive information such as the IP address of 
+    a web server running behind a reverse proxy   
+  </li>
+</ul>
+
+</div>
+
+
+
+<p class="head">Overview of a SSRF common flow</p>
+
+<div class="well para">
+<ul>
+  <li>Typical exploitation of a server-side request forgery vulnerability</li>
+</ul>
+
+<p>In a typical SSRF scenario, an external attacker who wants to access an internal server can’t 
+  use direct requests because they would be blocked by the firewall. Instead, malicious actors can exploit an 
+  SSRF vulnerability to make their attack via a vulnerable web server: 
+
+</p>
+
+
+<ul>
+  <li>The attacker sends a forged request to a web server that is vulnerable to SSRF and resides on the same internal network as the target server.</li>
+</ul>
+
+
+<ul>
+  <li>The vulnerable web server sends the attacker-controlled request to the victim’s server, bypassing the firewall.</li>
+</ul>
+
+
+<ul>
+  <li>The victim’s server responds to the web server with the requested data.</li>
+</ul>
+
+
+<ul>
+  <li>If the specific SSRF vulnerability permits it, the data is sent back to the attacker. In most cases, the attacker will need to exfiltrate or infer this information by other means (out-of-band). </li>
+</ul>
+
+
+</div>
+
+<div class="head">RISKS:</div>
+<div class="risks">
+  <img src="/prevalence.PNG" alt="">
+  <img src="explit.PNG" alt="">
+  <img src="impact.PNG" alt="">
+  <!-- <div class="prevalence">PREVALENCE : OCCASIONAL</div>
+  <div class="exploitability">EXPLOITABILITY : EASY</div>
+  <div class="impact">IMPACT : DEVASTATING</div> -->
+</div>
+
+<h3 class="head" "> Why is server-side request forgery dangerous? </h3>
+<p class="well para">While many web vulnerabilities directly affect the target system, SSRF allows attackers to use the target as an intermediary that passes requests to a 
+  third system. So while an SSRF attack might not be damaging in itself, it can provide malicious hackers with access to internal systems that were never supposed to be accessible from 
+  the Internet. There are several reasons why this is dangerous</p>
+
+<p class="head">How to Prevent</p>
+<p>Developers can prevent SSRF by implementing some or all the following defense in depth controls: </p>
+<div class="well para">
+<ul><strong>From Network layer</strong> </ul>
+
+<li>Segment remote resource access functionality in separate networks to reduce the impact of SSRF </li>
+
+<li>Enforce “deny by default” firewall policies or network access control rules to block all but essential intranet traffic.</li>
+
+
+
+
+
+<p>
+</div>
+<div class="well para">
+<ul><strong> From Application layer: </strong></ul>
+<li>Sanitize and validate all client-supplied input data </li>
+<li>Enforce the URL schema, port, and destination with a positive allow list </li>
+<li>Do not send raw responses to clients</li>
+<li>Disable HTTP redirections </li>
+<li>Be aware of the URL consistency to avoid attacks such as DNS rebinding and “time of check, time of use” (TOCTOU) race conditions</li>
+</p>
+
+
+<p>
+</div>
+<div class="well para">
+<ul><strong> Additional Measures to consider: </strong></ul>
+<li>Don't deploy other security relevant services on front systems (e.g., OpenID). Control local traffic on these systems (e.g., localhost) </li>
+<li>For frontends with dedicated and manageable user groups use network encryption (e.g., VPNs) on independent systems to consider very high protection needs </li>      
+</p>
+
+
+
+</div>
+
+<h3 class="head">What are the potential impacts of SSRF attacks?:</h3>
+<div class="para well">
+<p>The direct impact of exploiting a server-side request forgery vulnerability is nearly always information disclosure because attackers obtain a lot of useful 
+  information about systems and resources that should be inaccessible to them. However, the indirect consequences can be devastating, since SSRF can allow malicious actors to: </p>
+
+<ul>
+  <li> Use the vulnerable server as a port and IP scanner for internal and external systems </li>
+</ul>
+
+<ul>
+  <li> Interact with protocols such as Gopher (if enabled) to perform additional reconnaissance </li>
+</ul>
+
+<ul>
+  <li> Discover the IP addresses of servers running behind a reverse proxy  </li>
+</ul>
+
+<ul>
+  <li> Obtain remote code execution </li>
+</ul>
+
+
+
+
+</div>
+
+<p class="head">Example Attack Scenarios:</p>
+<div class="para well">
+<p>Attackers can use SSRF to attack systems protected behind web application firewalls, firewalls, or network ACLs, using scenarios such as: </p>
+
+<ul>
+  <p><strong>Scenario #1:</strong> Port scan internal servers – If the network architecture is unsegmented, attackers can map out internal networks and determine 
+    if ports are open or closed on internal servers from connection results or elapsed time to connect or reject SSRF payload connections.</p>
+</ul>
+
+</div>
+<div class="para well">
+<ul>
+  <p><strong>Scenario #2:</strong>Sensitive data exposure – Attackers can access local files such as or internal services to gain sensitive information such as file:///etc/passwd</span> and http://localhost:28017/. </p>
+</ul>
+
+</div>
+<div class="para well">
+<ul>
+  <p><strong>Scenario #3:</strong>Access metadata storage of cloud services – Most cloud providers have metadata storage such as http://169.254.169.254/. An attacker can read the metadata to gain sensitive information. </p>
+</ul>
+</div>
+
+<div class="para well">
+<ul>
+  <p><strong>Scenario #4:</strong>Compromise internal services – The attacker can abuse internal services to conduct further attacks such as Remote Code Execution (RCE) or Denial of Service (DoS).</p>
+</ul>
+
+</div>
+
+    </div>
+  </div>
+  <a  href="./Quiz/Server Side Quiz/index.html"><button class="quiz-btn"><h5 class="head">Let's Test Your Understanding With <br> <h3 class="head">QUIZ</h3> </h5></button></a>
+</div>
+<div class="padding"><br></div>  
+    </div> 
+  </body>
+  
+</html>
