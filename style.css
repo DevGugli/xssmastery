@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@700&family=PT+Serif+Caption:ital@0;1&display=swap");
+@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:500";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&family=PT+Sans+Caption&display=swap");
+
+html {
+  font-family: "PT Sans Caption", sans-serif !important;
+  scroll-behavior: smooth;
+}
+img {
+  text-align: center;
+}
+.margin {
+  margin-left: 2rem;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: white;
+  text-decoration: none;
+}
+.container {
+  border: 5px black solid;
+}
+.container-head {
+  border: 5px black solid;
+  padding: 2rem;
+}
+.mar {
+  margin: 2rem;
+}
+.home-sub-n {
+  display: flex;
+}
+.sub3 {
+  border: 5px black solid;
+  margin: 2rem;
+}
+.home-sub-left {
+  display: flex;
+}
+.open-sans {
+  font-family: Open Sans;
+}
+.margin {
+  margin-left: 5rem;
+}
+.quiz-btn {
+  width: 80%;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  align-items: center;
+  border: 5px black solid;
+  background-color: white;
+  color: black;
+  box-shadow: 4px 7px 0px black;
+}
+.quiz-btn:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s ease-in-out;
+  box-shadow: 4px 7px 0px rgb(88, 84, 84);
+}
+.risks {
+  display: flex;
+}
+.risks img {
+  width: 210px;
+  height: auto;
+  margin: 1rem;
+}
+.prevalence,
+.exploitability,
+.impact {
+  margin: 3rem;
+  padding: 1rem;
+  border: 2px black solid;
+}
+.heading {
+  border: 5px black solid;
+  padding: 2rem;
+  text-align: center;
+}
+.right {
+  width: 96vw;
+  padding-left: 32rem;
+  padding-top: 5rem;
+}
+.head {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 1rem;
+  text-transform: uppercase;
+}
+.para {
+  font-size: 15px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  transition: 0.4s ease-out;
+}
+.para:hover,
+.well:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  transition: 0.3s ease-in;
+}
+.nav-side-menu {
+  overflow: auto;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #000000;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  color: #ffffff;
+}
+.brand h3 {
+  font-size: 15px;
+  padding: 2rem;
+}
+.brand img {
+  height: 300px;
+  width: 300px;
+}
+.nav-side-menu .brand {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+      .collapsed{
+         .arrow:before{
+                   font-family: FontAwesome;
+                   content: "\f053";
+                   display: inline-block;
+                   padding-left:10px;
+                   padding-right: 10px;
+                   vertical-align: middle;
+                   float:right;
+              }
+       }
+  */
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #eeeeee;
+  background-color: #101011;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #f8f8f8;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #b2c6f8;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #080808;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #7f848a;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: "PT Sans Caption", sans-serif;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #e9e8e6;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    height: inherit;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  /* .right {
+    padding: 5rem;
+  }
+  img {
+    width: 300px;
+    height: auto;
+  }
+  .risks img {
+    width: 150px;
+    height: auto; */
+}
